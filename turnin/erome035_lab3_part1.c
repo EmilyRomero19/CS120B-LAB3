@@ -37,10 +37,10 @@ int main(void) {
 	if ((tmpA & 0x01) == 0x01) { // 0000 000A1
 		tmpC = tmpC + 1;
 	}
-	if ((tmpA & 0x02) == 0x02) {
+	if ((tmpA & 0x02) == 0x02) { // 0000 00A20
 		tmpC = tmpC + 1;
 	}
-	if ((tmpA & 0x04) == 0x04) {
+	if ((tmpA & 0x04) == 0x04) { // 0000 0A300
                 tmpC = tmpC + 1;
         }
         if ((tmpA & 0x08) == 0x08) {
