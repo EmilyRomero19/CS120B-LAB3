@@ -15,21 +15,17 @@
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
 
-tests = [ {'description': 'PINA:0x00, PINB:0x00 => PORTC: 0x00',
-    'steps': [ {'inputs': [('PINA',0x00),('PINB',0x00)], 'iterations': 2 } ],
-    'expected': [('PORTC',0x00)],
+tests = [ {'description': 'PINA:0x00 => PORTC: 0x40',
+    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 2 } ],
+    'expected': [('PORTC',0x40)],
     },
-    {'description': 'PINA:0x0F, PINB:0x00 => PORTC: 0x04',
-    'steps': [ {'inputs': [('PINA',0x0F),('PINB',0xFF)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x04)],
+    {'description': 'PINA:0x83 => PORTC: 0x70',
+    'steps': [ {'inputs': [('PINA',0x83)],'iterations': 2}], # Set PIN to val then run one iteration
+    'expected': [('PORTC',0x70)],
     },
-    {'description': 'PINA:0x0F, PINB:0xF0 => PORTC: 0x08',
-    'steps': [{'inputs': [('PINA',0x0F),('PINB',0xF0)],'iterations':2}],
-    'expected': [('PORTC',0x08)],
-    },
-    {'description': 'PINA:0xFF, PINB:0xFF => PORTC: 0x16',
-    'steps': [{'inputs': ['PINA',0xFF),('PINB',0xFF)], 'iterations':2}],
-    'expected':[('PORTB',0x16)],
+    {'description': 'PINA:0x07 => PORTC: 0x3C',
+    'steps': [{'inputs': [('PINA',0x07)],'iterations':2}],
+    'expected': [('PORTC',0x3C)],
     },
     ]
 #et of "watch" variables these need to be global or static and may need
