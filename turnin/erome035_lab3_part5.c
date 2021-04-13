@@ -31,7 +31,7 @@ int main(void) {
 	tmpB = PINB;  
 	result = 0x00;//unable to read 
         
-	weight = ((weight + tempD) << 1) + (PORTB & 0x01);
+	weight = ((weight + tmpD) << 1) + (PORTB & 0x01);
         
 	if (weight >= 70) { // if greater and or equal 70 lbs
 		
