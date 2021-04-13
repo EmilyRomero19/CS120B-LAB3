@@ -22,7 +22,7 @@ int main(void) {
     unsigned char tmpB = 0x00;
     unsigned char tmpD = 0x00;
     unsigned char result = 0x00;
-    unsigned char weight = 0x0000; // weight value
+    unsigned char weight = 0x00; // weight value
 
     while (1) {
     
@@ -31,11 +31,11 @@ int main(void) {
 	tmpB = PINB;  
 	result = 0x00;//unable to read 
         
-	weight = (tmpD << 1) | (tmpB & 0x01);
+	weight = ((weight + tempD) << 1) + (PORTB & 0x01);
         
-	if (weight >= 0x46) { // if greater and or equal 70 lbs
+	if (weight >= 70) { // if greater and or equal 70 lbs
 		
-        result = 0x02; 
+        	result = 0x02; 
         
 	}
 	else if (weight > 0x05 && weight < 0x46) { //if greater than 5 but less than 70
@@ -48,7 +48,7 @@ int main(void) {
 		result = 0x00; 
         
 	}
-	PORTB = result;
+		PORTB = result;
 	
     }
     return 1;
