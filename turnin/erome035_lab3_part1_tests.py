@@ -16,19 +16,19 @@
 # altered in between executions (unless preconditions are used).
 
 tests = [ {'description': 'PINA:0x00, PINB:0x00 => PORTC: 0x00',
-    'steps': [ {'inputs': [('PINA',0x00)('PINB',0x00)], 'iterations': 2 } ],
+    'steps': [ {'inputs': [('PINA',0x00),('PINB',0x00)], 'iterations': 2 } ],
     'expected': [('PORTC',0x00)],
     },
     {'description': 'PINA:0x0F, PINB:0x00 => PORTC: 0x04',
-    'steps': [ {'inputs': [('PINA',0x0F)('PINB',0xFF)],'iterations': 2}], # Set PIN to val then run one iteration
+    'steps': [ {'inputs': [('PINA',0x0F),('PINB',0xFF)],'iterations': 2}], # Set PIN to val then run one iteration
     'expected': [('PORTC',0x04)],
     },
     {'description': 'PINA:0x0F, PINB:0xF0 => PORTC: 0x08',
-    'steps': [{'inputs': [('PINA',0x0F)('PINB',0xF0)],'iterations':2}],
+    'steps': [{'inputs': [('PINA',0x0F),('PINB',0xF0)],'iterations':2}],
     'expected': [('PORTC',0x08)],
     },
     {'description': 'PINA:0xFF, PINB:0xFF => PORTC: 0x16',
-    'steps': [{'inputs': ['PINA',0xFF)('PINB',0xFF)], 'iterations':2}],
+    'steps': [{'inputs': ['PINA',0xFF),('PINB',0xFF)], 'iterations':2}],
     'expected':[('PORTB',0x16)],
     },
     ]
