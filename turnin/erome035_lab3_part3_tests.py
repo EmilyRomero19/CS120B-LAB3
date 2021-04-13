@@ -27,6 +27,14 @@ tests = [ {'description': 'PINA:0x00 => PORTC: 0x40',
     'steps': [{'inputs': [('PINA',0x07)],'iterations':2}],
     'expected': [('PORTC',0x3C)],
     },
+    {'description': 'PINA:0x3F => PORTC: 0xBF',
+    'steps': [{'inputs': [('PINA',0x3F)],'iterations':2}],
+    'expected': [('PORTC',0xBF)],
+    },     
+    {'description': 'PINA:0x7F => PORTC: 0x3F',
+    'steps': [{'inputs': [('PINA',0x7F)],'iterations':2}],
+    'expected': [('PORTC',0x3F)],
+    },       
     ]
 #et of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
