@@ -23,6 +23,10 @@ int main(void) {
 
     /* Insert your solution below */
     while (1) {
+	    
+	//READ INPUTS
+	tmpA = PINA;
+	tmpC = 0x00; //unable to read 
       
       if (((tmpA & 0x0D) == 0x0D) || ((tmpA & 0x0E) == 0x0E) || ((tmpA & 0x0F) == 0x0F)) {
                
