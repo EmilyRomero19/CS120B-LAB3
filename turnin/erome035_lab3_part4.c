@@ -28,8 +28,8 @@ int main(void) {
 	    tmpA = PINA; //READ INPUT
       
       //upper and lower nibble 
-	    tmpB = (tempA >> 4) & 0x0F;
-	    tmpC = (tempA << 4) & 0xF0;
+	    tmpB = (tmpA >> 4) & 0x0F;
+	    tmpC = (tmpA << 4) & 0xF0;
 	    
       //set upper and lower nibble of PINA to PORTB and PORTC
 	    PORTB = tmpB;
