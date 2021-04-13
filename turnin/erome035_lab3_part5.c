@@ -16,7 +16,7 @@
 int main(void) {
     
     /* Insert DDR and PORT initializations */
-    DDRB = 0x00; PORTB = 0xFF; //input
+    DDRB = 0x01; PORTB = 0xFF; //input
     DDRD = 0x00; PORTD = 0xFF; //input 
     
     unsigned char tmpB = 0x00;
@@ -38,7 +38,7 @@ int main(void) {
         result = 0x02; 
         
 	}
-	else if (weight > 0x0005) { //if greater than 5 
+	else if (weight > 0x05) { //if greater than 5 
         
 		result = 0x04;
         
