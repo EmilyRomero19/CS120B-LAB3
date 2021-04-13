@@ -29,6 +29,8 @@ int main(void) {
 	//read inputs
 	tmpA = PINA;
         tmpB = PINB;
+	
+	tmpC = 0x00;
        
 	//tempC is our count holder
         
