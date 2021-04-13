@@ -16,6 +16,40 @@
 int main(void) {
     
     /* Insert DDR and PORT initializations */
-    DDRA = 0x00; PORTA = 0xFF; //input
-    DDRB = 0xFF; PORTB = 0x00; //output
-    DDRC = 0xFF; PORTC = 0x00; //output
+    DDRB = 0x00; PORTB = 0xFF; //input
+    DDRD = 0x00; PORTD = 0xFF; //input 
+    
+    unsigned char tmpB = 0x00;
+    unsigned char tmpD = 0x00;
+    unsigned char result = 0x00;
+    unsigned char weight = 0x0000; // weight value
+
+    while (1) {
+    
+    //READ INPUTS
+	tmpD = PIND; 
+	tmpB = PINB;  
+	result = 0x00;//unable to read 
+        
+	weight = (tmpD << 1) | (tmpB & 0x01);
+        
+	if (weight >= 0x46) { // if greater and or equal 70 lbs
+		
+        result = 0x02; 
+        
+	}
+	else if (weight > 0x0005) { //if greater than 5 
+        
+		result = 0x04;
+        
+	}
+	else { // if neither 
+        
+		result = 0x00; 
+        
+	}
+	PORTB = result;
+	
+    }
+    return 1;
+}
